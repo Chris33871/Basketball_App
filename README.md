@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Basketball Game Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React Web app that helps connect basketball players across London
 
-## Available Scripts
+Video Demo:
+https://www.youtube.com/watch?v=zH5oNqTMWfo
 
-In the project directory, you can run:
+https://github.com/Chris33871/Basketball-App/assets/68507104/124cd594-0c78-4d54-9db7-af01d5dc9690
 
-### `npm start`
+### Sessions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+It's summer and people want to play outside. Before you leave the house you want to know how many people will be playing at your local court.
+This is where sessions come in. A sessions is just a 30 minute timeframe where individuals will be playing at the court. Users can either create or join sessions made by other players.
+They simply enter the location and the time at which they will be at the basketball court. This way before leaving to play you can easily check if it will be an entertaining and competitive busy day at the cout or a slow uneventful day.
+With this information users can avoid waisting time traveling to their favourite court only to find it empty.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Create or Join Games
 
-### `npm test`
+Users can create or join private games. A user can list their game on the website to allow others to join them for a game of basketball
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Teams
 
-### `npm run build`
+Users can choose to join public or private (work in progress) teams to get access to team information such as who's playing where, general news and the ability to socialise and make friends with people who have the same interest as you.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Users can choose to join the biggest and most famous team in town,
+attempt to grow their own community by creating new public team or simply create a
+private team for just them and their friends.
