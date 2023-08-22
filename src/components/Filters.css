@@ -1,0 +1,16 @@
+.filters {
+ text-align: center;
+}
+
+.date--picker {
+    width: 35%;
+}
+
+.date--reset {
+    cursor: pointer;
+    margin-top: 1%;
+    background-color: #adadad;
+    border: solid 0.5px black;
+    border-radius: 3px;
+}
+

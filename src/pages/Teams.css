@@ -1,0 +1,40 @@
+.teams--page {
+    
+    justify-content: center;
+    
+}
+
+.teams--content {
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+}
+
+.teams-public, .teams-private {
+    /* flex: 4; */
+    background-color: white;
+    margin: 20px;
+    padding-top: 20px;
+    border: solid 1px #BDBDBD;
+    border-radius: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.teams-public--header, .teams-private--header {
+    display: flex;
+    align-items: center;
+    background-color: #9E9E9E;
+    height: 80px;
+    margin-top: -21px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    /* justify-content: space-between; */
+}
+.teams-public--header h1, .teams-private--header h1 {
+    padding-left: 25px
+}
+
+.teams--btn {
+    
+}

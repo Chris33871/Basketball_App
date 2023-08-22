@@ -1,0 +1,163 @@
+
+.games--list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    flex-wrap: wrap;
+    padding-left: 5%;
+    padding-top: 1%;
+    overflow-y: scroll;
+    height: 75vh;
+
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+} 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  border-radius: 7px;
+}
+
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    /* background: #BDBDBD; */
+    border-radius: 4px;
+    border: solid 0.5px #CDCDCD;
+    /* box-shadow: 0 0 5px #ccc; */
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 8px #ccc;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    border: solid 1px #9E9E9E;
+}
+
+.game--item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    border-radius: 7px;
+    width: 95%;
+    border: solid 0.5px #BDBDBD;
+    box-shadow: 0 0 5px #ccc;
+}
+.game--item:hover {
+    border: solid 2px #9E9E9E;
+}
+.game--item--passed {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    background-color: #cdcdcd;
+    font-size: 18px;
+    border-radius: 7px;
+    width: 95%;
+    border: solid 0.5px #BDBDBD;
+    box-shadow: 0 0 5px #ccc;
+}.game--item--passed:hover {
+    border: solid 2px #9E9E9E;
+}
+
+.game--info, .game--players {
+    padding: 10px;
+    color: #757575;
+}
+
+.game--date-time {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+    align-items: center;
+    
+}
+.game--date {
+    font-size: 16px;
+    padding-top: 3%;
+}
+
+.game--info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.game--generalLocation {
+    font-weight: bold;
+    color: black;
+}
+
+.game--time {
+    padding-right: 10px;
+
+}
+
+.game--host {
+    font-size: 18px;
+    /* font-style: italic; */
+}
+
+.game--players {
+    margin-left: auto;
+    margin-right: 10px;
+    font-style: italic;
+}
+
+.joined-button {
+    background-color: #9E9E9E;
+    margin-right: 1%;
+    font-size: 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 15px;
+    box-shadow: 0px 0px 8px #ccc;
+    
+    font-style: italic;
+    font-size: 12px;
+    
+}
+
+.join-game--button {
+    background-color: transparent;
+    margin-right: 1%;
+    font-size: 16px;
+    
+    border-radius: 10px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 15px;
+    box-shadow: 0px 0px 8px #ccc;
+}
+.join-game--button:hover{
+    border: solid 1px #9E9E9E; 
+}
+.join-game--button:active {
+    background-color: #9E9E9E;
+}
+
+.join-game--button--passed {
+    background-color: transparent;
+    margin-right: 1%;
+    font-size: 16px;
+    color: transparent;
+    border-radius: 10px;
+    text-decoration: none;
+    border: none;
+    padding: 0 15px;
+    box-shadow: 0px 0px 8px #ccc;
+}

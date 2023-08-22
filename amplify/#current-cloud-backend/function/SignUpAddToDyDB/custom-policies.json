@@ -1,0 +1,10 @@
+[
+  {
+    "Action": [
+      "dynamodb:PutItem"
+    ],
+    "Resource": [
+      "arn:aws:dynamodb:eu-west-2:935103955266:table/UsersTable-sinihf4uszezbfdojmwtp46dt4-dev"
+    ]
+  }
+]

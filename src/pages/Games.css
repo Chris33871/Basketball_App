@@ -1,0 +1,76 @@
+.game--page {
+    background-color: white;
+}
+
+.game--content {
+    display: flex;
+}
+
+.game--filters {
+    flex: 1;
+    padding-top: 20px;
+    background-color: white;
+    width: 20%;
+    margin: 20px;
+    border: solid 1px #83677b;
+    border-radius: 10px;
+}
+.game--filters--header{
+    background-color: #83677b;
+    margin-top: -41px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.game--filters--header h1{
+    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-left: 25px;
+    
+}
+
+
+
+.game--list {
+    flex: 4;
+    background-color: white;
+    width: 80%;
+    margin: 20px;
+    padding-top: 20px;
+    border: solid 1px #BDBDBD;
+    border-radius: 10px;
+}
+
+.game--list--header {
+    display: flex;
+    align-items: center;
+    background-color: #9E9E9E;
+    height: 80px;
+    margin-top: -21px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    justify-content: space-between;
+}
+.game--list--header h1 {
+    padding-left: 25px
+}
+
+.create-game--btn {
+    background-color: white;
+    border-radius: 10px;
+    height: 2.5rem;
+    padding: 0 15px;
+    box-shadow: 0px 0px 8px #212121;
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 25px;
+} .create-game--btn:hover {
+    border: solid 1px #212121; 
+} .create-game--btn:active {
+    background-color: #212121;
+    color: white;
+}

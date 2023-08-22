@@ -1,0 +1,30 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bballaddicts-dev-134924-authRole",
+      "UnauthRoleArn": "arn:aws:iam::935103955266:role/amplify-bballaddicts-dev-134924-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::935103955266:role/amplify-bballaddicts-dev-134924-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-bballaddicts-dev-134924-deployment",
+      "UnauthRoleName": "amplify-bballaddicts-dev-134924-unauthRole",
+      "StackName": "amplify-bballaddicts-dev-134924",
+      "StackId": "arn:aws:cloudformation:eu-west-2:935103955266:stack/amplify-bballaddicts-dev-134924/393a3710-0c44-11ee-99c7-067c80e783ca",
+      "AmplifyAppId": "d1akg2izqn0zh7"
+    },
+    "categories": {
+      "api": {
+        "bballaddicts": {}
+      },
+      "auth": {
+        "bballaddicts43342858": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "SignUpAddToDyDB": {
+          "deploymentBucketName": "amplify-bballaddicts-dev-134924-deployment",
+          "s3Key": "amplify-builds/SignUpAddToDyDB-4e73462f4b6f6b644533-build.zip"
+        }
+      }
+    }
+  }
+}

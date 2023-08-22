@@ -1,0 +1,150 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bballaddicts-dev-134924-authRole",
+      "UnauthRoleArn": "arn:aws:iam::935103955266:role/amplify-bballaddicts-dev-134924-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::935103955266:role/amplify-bballaddicts-dev-134924-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-bballaddicts-dev-134924-deployment",
+      "UnauthRoleName": "amplify-bballaddicts-dev-134924-unauthRole",
+      "StackName": "amplify-bballaddicts-dev-134924",
+      "StackId": "arn:aws:cloudformation:eu-west-2:935103955266:stack/amplify-bballaddicts-dev-134924/393a3710-0c44-11ee-99c7-067c80e783ca",
+      "AmplifyAppId": "d1akg2izqn0zh7"
+    }
+  },
+  "api": {
+    "bballaddicts": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "bballaddicts43342858"
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            },
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authbballaddicts43342858"
+              }
+            }
+          ],
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 30,
+              "description": "api key description"
+            }
+          }
+        },
+        "GraphQLAPIIdOutput": "sinihf4uszezbfdojmwtp46dt4",
+        "GraphQLAPIEndpointOutput": "https://6qrb3kkbm5ckflcld7io2rkfga.appsync-api.eu-west-2.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-7vqyzpjevnhnhe33eyc5coltry"
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync",
+      "lastPushTimeStamp": "2023-08-15T09:29:05.327Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-bballaddicts-dev-134924-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apibballaddicts"
+      },
+      "lastPushDirHash": "6LB5istLcwm2P0W+KdgSUk/EFAM="
+    }
+  },
+  "auth": {
+    "bballaddicts43342858": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "output": {
+        "UserPoolId": "eu-west-2_Rmkv7qpWX",
+        "AppClientIDWeb": "72raf5c2pn5m132fsmqqiprgn9",
+        "AppClientID": "2a2gckjgaqq5b6adu4jf809t5v",
+        "IdentityPoolId": "eu-west-2:cc95827f-c23a-4543-bb42-b35ce99a990e",
+        "UserPoolArn": "arn:aws:cognito-idp:eu-west-2:935103955266:userpool/eu-west-2_Rmkv7qpWX",
+        "IdentityPoolName": "bballaddicts43342858_identitypool_43342858__dev",
+        "UserPoolName": "bballaddicts43342858_userpool_43342858"
+      },
+      "lastPushTimeStamp": "2023-08-15T09:29:04.682Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-bballaddicts-dev-134924-deployment/amplify-cfn-templates/auth/bballaddicts43342858-cloudformation-template.json",
+        "logicalId": "authbballaddicts43342858"
+      }
+    },
+    "userPoolGroups": {
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "bballaddicts43342858",
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ]
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito-UserPool-Groups",
+      "output": {
+        "bballAddictsUserPoolGroupRole": "arn:aws:iam::935103955266:role/eu-west-2_Rmkv7qpWX-bballAddictsUserPoolGroupRole"
+      },
+      "lastPushTimeStamp": "2023-08-15T09:29:04.691Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-bballaddicts-dev-134924-deployment/amplify-cfn-templates/auth/userPoolGroups-cloudformation-template.json",
+        "logicalId": "authuserPoolGroups"
+      }
+    }
+  },
+  "function": {
+    "SignUpAddToDyDB": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::935103955266:role/bballaddictsLambdaRole341e806e-dev",
+        "Region": "eu-west-2",
+        "Arn": "arn:aws:lambda:eu-west-2:935103955266:function:SignUpAddToDyDB-dev",
+        "Name": "SignUpAddToDyDB-dev",
+        "LambdaExecutionRole": "bballaddictsLambdaRole341e806e-dev"
+      },
+      "lastPushTimeStamp": "2023-08-15T09:29:04.702Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-bballaddicts-dev-134924-deployment/amplify-cfn-templates/function/SignUpAddToDyDB-cloudformation-template.json",
+        "logicalId": "functionSignUpAddToDyDB"
+      },
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-bballaddicts-dev-134924-deployment",
+        "s3Key": "amplify-builds/SignUpAddToDyDB-4e73462f4b6f6b644533-build.zip"
+      }
+    }
+  }
+}

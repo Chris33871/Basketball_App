@@ -1,0 +1,71 @@
+.create-session--div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    padding-bottom: 5%;
+}
+
+.create-session--form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+
+.create-session--label {
+    font-size: 20px;
+    margin-bottom: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.create-session--input {
+    width: 100%;
+    height: 25%;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0px 0px 8px #ccc;
+}
+.create-session--input:focus {
+    outline: none;
+} .create-session--input:hover {
+    border: solid 1px #9E9E9E;
+}
+
+.create-session--select {
+    width: 100%;
+    height: 25%;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0px 0px 8px #ccc;
+}
+.create-session--select:hover {
+    border: solid 1px #9E9E9E;
+}
+
+.create-session--button {
+    margin-top: 20px;
+    width: 70%;
+    height: 25%;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 8px #ccc;
+
+}
+.create-session--button:hover {
+    border: solid 1px #9E9E9E;
+}

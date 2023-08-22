@@ -1,0 +1,19 @@
+{
+    "AppSyncApiName": "bballaddicts",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authbballaddicts43342858",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "S3DeploymentBucket": "amplify-bballaddicts-dev-134924-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/1a52654f8cedbd7826aa2192320678f178bc456b"
+}

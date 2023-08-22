@@ -1,0 +1,98 @@
+.session--div {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    padding-left: 5%;
+    padding-top: 1%;
+    overflow-y: scroll;
+    max-height: 60vh;
+}
+
+.session--card {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    border-radius: 7px;
+    width: 95%;
+    border: solid 0.5px #BDBDBD;
+    box-shadow: 0 0 5px #ccc;
+
+    position: relative;
+    ;
+} .session--card:hover {
+    border: solid 2px #9E9E9E;
+}
+
+.session--card--header {
+    font-weight: bold;
+    color: black;
+    margin: 0px 20px 0px 20px;
+}
+
+.session--card--dropdown--icon {
+    cursor: pointer;
+    margin-right: 10px;
+    width: 3%;
+} .session--card--dropdown--icon:hover {
+    width: calc(3% + 2px);
+}
+
+
+.session--card--times {
+    margin: 5px 0 5px 0;
+    display: flex;
+    overflow-x: scroll;
+    max-height: 200px;
+    width: 700px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.session--card--dropdown {
+    align-items: center;
+    margin: 10px 10px 10px 10px;
+    padding: 7px;
+
+    background-color: transparent;
+    border-radius: 7px;
+    width: 170px;
+    box-shadow: 0 0 5px #ccc;
+
+    font-size: 14px;
+    cursor: default;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.session--card--dropdown:hover {
+    border: solid 0.5px #9E9E9E;
+}
+.session--card--dropdown--join {
+    cursor: pointer;
+    box-shadow: 0 0 5px #ccc;
+    background-color: transparent;
+    box-shadow: 0 0 5px #ccc;
+    border-radius: 7px;
+    border: none;
+} .session--card--dropdown--join:hover {
+    border: solid 0.5px #BDBDBD;
+}
+
+.session--card--dropdown--players {
+    font-style: italic;
+    font-size: 13px;
+}
+
+.session--card--player-count {
+    margin-left: auto;
+    margin-right: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+    font-style: italic;
+}
+

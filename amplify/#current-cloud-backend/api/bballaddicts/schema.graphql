@@ -1,0 +1,107 @@
+type SessionTimesTable
+  @model
+  @auth(
+    rules: [
+      { allow: public, operations: [read, create, update] }
+      { allow: groups, groups: ["bballAddictsUserPool"] }
+      {
+        allow: owner
+        ownerField: "GameOwner"
+        operations: [create, update, delete, read]
+      }
+      { allow: private, operations: [create, update, read] }
+    ]
+  ) {
+  id: ID!
+  SessionTableId: ID!
+  SessionTimeLocation: String!
+  SessionTimePlayers: [String]
+  SessionTimePlayersCount: Int
+  SessionTimeTime: AWSTime!
+  SessionTimeDate: AWSDate
+}
+
+type SessionsTable
+  @model
+  @auth(
+    rules: [
+      { allow: public, operations: [read, create, update] }
+      { allow: groups, groups: ["bballAddictsUserPool"] }
+      {
+        allow: owner
+        ownerField: "GameOwner"
+        operations: [create, update, delete, read]
+      }
+      { allow: private, operations: [create, update, read] }
+    ]
+  ) {
+  id: ID!
+  SessionLocation: String!
+  SessionPlayers: [String]
+  SessionPlayersCount: Int
+}
+
+type TeamsTable
+  @model
+  @auth(
+    rules: [
+      { allow: groups, groups: ["bballAddictsUserPool"] }
+      {
+        allow: owner
+        ownerField: "TeamOwner"
+        operations: [read, update, delete, create]
+      }
+      { allow: public, operations: [read, update, create] }
+    ]
+  ) {
+  id: ID!
+  TeamName: String!
+  TeamOwner: String!
+  TeamStatus: String!
+  TeamMembers: [String]
+}
+
+type GamesTable
+  @model
+  @auth(
+    rules: [
+      { allow: public, operations: [read, create, update] }
+      { allow: groups, groups: ["bballAddictsUserPool"] }
+      {
+        allow: owner
+        ownerField: "GameOwner"
+        operations: [create, update, delete, read]
+      }
+      { allow: private, operations: [create, update, read] }
+    ]
+  ) {
+  id: ID!
+  Location: String!
+  GameDate: AWSDate!
+  GameTime: AWSTime!
+  GameCompLvl: String!
+  GamePlayers: [String]
+  GamePrice: Int
+  GameOwner: String
+  GameCourt: String
+  PlayersSex: String
+}
+
+type UsersTable
+  @model
+  @auth(
+    rules: [
+      { allow: groups, groups: ["bballAddictsUserPool"] }
+      { allow: owner, operations: [read, update, delete] }
+      { allow: public, operations: [read, update] }
+    ]
+  ) {
+  id: ID!
+  Email: AWSEmail!
+  Username: String!
+  Surname: String
+  Name: String
+  GamesPlayed: Int
+  Team: String
+  teamstableID: ID
+}

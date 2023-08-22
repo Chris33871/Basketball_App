@@ -1,0 +1,583 @@
+type SessionTimesTable @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  SessionTableId: ID!
+  SessionTimeLocation: String!
+  SessionTimePlayers: [String]
+  SessionTimePlayersCount: Int
+  SessionTimeTime: AWSTime!
+  SessionTimeDate: AWSDate
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  GameOwner: String
+}
+
+type SessionsTable @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  SessionLocation: String!
+  SessionPlayers: [String]
+  SessionPlayersCount: Int
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  GameOwner: String
+}
+
+type TeamsTable @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  TeamName: String!
+  TeamOwner: String!
+  TeamStatus: String!
+  TeamMembers: [String]
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type GamesTable @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  Location: String!
+  GameDate: AWSDate!
+  GameTime: AWSTime!
+  GameCompLvl: String!
+  GamePlayers: [String]
+  GamePrice: Int
+  GameOwner: String
+  GameCourt: String
+  PlayersSex: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UsersTable @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  Email: AWSEmail!
+  Username: String!
+  Surname: String
+  Name: String
+  GamesPlayed: Int
+  Team: String
+  teamstableID: ID
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelSessionTimesTableConnection @aws_api_key @aws_iam @aws_cognito_user_pools {
+  items: [SessionTimesTable]!
+  nextToken: String
+}
+
+input ModelSessionTimesTableFilterInput {
+  id: ModelIDInput
+  SessionTableId: ModelIDInput
+  SessionTimeLocation: ModelStringInput
+  SessionTimePlayers: ModelStringInput
+  SessionTimePlayersCount: ModelIntInput
+  SessionTimeTime: ModelStringInput
+  SessionTimeDate: ModelStringInput
+  and: [ModelSessionTimesTableFilterInput]
+  or: [ModelSessionTimesTableFilterInput]
+  not: ModelSessionTimesTableFilterInput
+}
+
+type Query {
+  getSessionTimesTable(id: ID!): SessionTimesTable @aws_api_key @aws_iam @aws_cognito_user_pools
+  listSessionTimesTables(filter: ModelSessionTimesTableFilterInput, limit: Int, nextToken: String): ModelSessionTimesTableConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getSessionsTable(id: ID!): SessionsTable @aws_api_key @aws_iam @aws_cognito_user_pools
+  listSessionsTables(filter: ModelSessionsTableFilterInput, limit: Int, nextToken: String): ModelSessionsTableConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getTeamsTable(id: ID!): TeamsTable @aws_api_key @aws_iam @aws_cognito_user_pools
+  listTeamsTables(filter: ModelTeamsTableFilterInput, limit: Int, nextToken: String): ModelTeamsTableConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getGamesTable(id: ID!): GamesTable @aws_api_key @aws_iam @aws_cognito_user_pools
+  listGamesTables(filter: ModelGamesTableFilterInput, limit: Int, nextToken: String): ModelGamesTableConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getUsersTable(id: ID!): UsersTable @aws_api_key @aws_iam @aws_cognito_user_pools
+  listUsersTables(filter: ModelUsersTableFilterInput, limit: Int, nextToken: String): ModelUsersTableConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+}
+
+input ModelSessionTimesTableConditionInput {
+  SessionTableId: ModelIDInput
+  SessionTimeLocation: ModelStringInput
+  SessionTimePlayers: ModelStringInput
+  SessionTimePlayersCount: ModelIntInput
+  SessionTimeTime: ModelStringInput
+  SessionTimeDate: ModelStringInput
+  and: [ModelSessionTimesTableConditionInput]
+  or: [ModelSessionTimesTableConditionInput]
+  not: ModelSessionTimesTableConditionInput
+}
+
+input CreateSessionTimesTableInput {
+  id: ID
+  SessionTableId: ID!
+  SessionTimeLocation: String!
+  SessionTimePlayers: [String]
+  SessionTimePlayersCount: Int
+  SessionTimeTime: AWSTime!
+  SessionTimeDate: AWSDate
+}
+
+input UpdateSessionTimesTableInput {
+  id: ID!
+  SessionTableId: ID
+  SessionTimeLocation: String
+  SessionTimePlayers: [String]
+  SessionTimePlayersCount: Int
+  SessionTimeTime: AWSTime
+  SessionTimeDate: AWSDate
+}
+
+input DeleteSessionTimesTableInput {
+  id: ID!
+}
+
+type Mutation {
+  createSessionTimesTable(input: CreateSessionTimesTableInput!, condition: ModelSessionTimesTableConditionInput): SessionTimesTable @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateSessionTimesTable(input: UpdateSessionTimesTableInput!, condition: ModelSessionTimesTableConditionInput): SessionTimesTable @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteSessionTimesTable(input: DeleteSessionTimesTableInput!, condition: ModelSessionTimesTableConditionInput): SessionTimesTable @aws_iam @aws_cognito_user_pools
+  createSessionsTable(input: CreateSessionsTableInput!, condition: ModelSessionsTableConditionInput): SessionsTable @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateSessionsTable(input: UpdateSessionsTableInput!, condition: ModelSessionsTableConditionInput): SessionsTable @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteSessionsTable(input: DeleteSessionsTableInput!, condition: ModelSessionsTableConditionInput): SessionsTable @aws_iam @aws_cognito_user_pools
+  createTeamsTable(input: CreateTeamsTableInput!, condition: ModelTeamsTableConditionInput): TeamsTable @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateTeamsTable(input: UpdateTeamsTableInput!, condition: ModelTeamsTableConditionInput): TeamsTable @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteTeamsTable(input: DeleteTeamsTableInput!, condition: ModelTeamsTableConditionInput): TeamsTable @aws_iam @aws_cognito_user_pools
+  createGamesTable(input: CreateGamesTableInput!, condition: ModelGamesTableConditionInput): GamesTable @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateGamesTable(input: UpdateGamesTableInput!, condition: ModelGamesTableConditionInput): GamesTable @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteGamesTable(input: DeleteGamesTableInput!, condition: ModelGamesTableConditionInput): GamesTable @aws_iam @aws_cognito_user_pools
+  createUsersTable(input: CreateUsersTableInput!, condition: ModelUsersTableConditionInput): UsersTable @aws_iam @aws_cognito_user_pools
+  updateUsersTable(input: UpdateUsersTableInput!, condition: ModelUsersTableConditionInput): UsersTable @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteUsersTable(input: DeleteUsersTableInput!, condition: ModelUsersTableConditionInput): UsersTable @aws_iam @aws_cognito_user_pools
+}
+
+input ModelSubscriptionSessionTimesTableFilterInput {
+  id: ModelSubscriptionIDInput
+  SessionTableId: ModelSubscriptionIDInput
+  SessionTimeLocation: ModelSubscriptionStringInput
+  SessionTimePlayers: ModelSubscriptionStringInput
+  SessionTimePlayersCount: ModelSubscriptionIntInput
+  SessionTimeTime: ModelSubscriptionStringInput
+  SessionTimeDate: ModelSubscriptionStringInput
+  and: [ModelSubscriptionSessionTimesTableFilterInput]
+  or: [ModelSubscriptionSessionTimesTableFilterInput]
+}
+
+type Subscription {
+  onCreateSessionTimesTable(filter: ModelSubscriptionSessionTimesTableFilterInput, GameOwner: String): SessionTimesTable @aws_subscribe(mutations: ["createSessionTimesTable"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateSessionTimesTable(filter: ModelSubscriptionSessionTimesTableFilterInput, GameOwner: String): SessionTimesTable @aws_subscribe(mutations: ["updateSessionTimesTable"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteSessionTimesTable(filter: ModelSubscriptionSessionTimesTableFilterInput, GameOwner: String): SessionTimesTable @aws_subscribe(mutations: ["deleteSessionTimesTable"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateSessionsTable(filter: ModelSubscriptionSessionsTableFilterInput, GameOwner: String): SessionsTable @aws_subscribe(mutations: ["createSessionsTable"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateSessionsTable(filter: ModelSubscriptionSessionsTableFilterInput, GameOwner: String): SessionsTable @aws_subscribe(mutations: ["updateSessionsTable"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteSessionsTable(filter: ModelSubscriptionSessionsTableFilterInput, GameOwner: String): SessionsTable @aws_subscribe(mutations: ["deleteSessionsTable"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateTeamsTable(filter: ModelSubscriptionTeamsTableFilterInput, TeamOwner: String): TeamsTable @aws_subscribe(mutations: ["createTeamsTable"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateTeamsTable(filter: ModelSubscriptionTeamsTableFilterInput, TeamOwner: String): TeamsTable @aws_subscribe(mutations: ["updateTeamsTable"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteTeamsTable(filter: ModelSubscriptionTeamsTableFilterInput, TeamOwner: String): TeamsTable @aws_subscribe(mutations: ["deleteTeamsTable"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateGamesTable(filter: ModelSubscriptionGamesTableFilterInput, GameOwner: String): GamesTable @aws_subscribe(mutations: ["createGamesTable"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateGamesTable(filter: ModelSubscriptionGamesTableFilterInput, GameOwner: String): GamesTable @aws_subscribe(mutations: ["updateGamesTable"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteGamesTable(filter: ModelSubscriptionGamesTableFilterInput, GameOwner: String): GamesTable @aws_subscribe(mutations: ["deleteGamesTable"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateUsersTable(filter: ModelSubscriptionUsersTableFilterInput, owner: String): UsersTable @aws_subscribe(mutations: ["createUsersTable"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateUsersTable(filter: ModelSubscriptionUsersTableFilterInput, owner: String): UsersTable @aws_subscribe(mutations: ["updateUsersTable"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteUsersTable(filter: ModelSubscriptionUsersTableFilterInput, owner: String): UsersTable @aws_subscribe(mutations: ["deleteUsersTable"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+}
+
+type ModelSessionsTableConnection @aws_api_key @aws_iam @aws_cognito_user_pools {
+  items: [SessionsTable]!
+  nextToken: String
+}
+
+input ModelSessionsTableFilterInput {
+  id: ModelIDInput
+  SessionLocation: ModelStringInput
+  SessionPlayers: ModelStringInput
+  SessionPlayersCount: ModelIntInput
+  and: [ModelSessionsTableFilterInput]
+  or: [ModelSessionsTableFilterInput]
+  not: ModelSessionsTableFilterInput
+}
+
+input ModelSessionsTableConditionInput {
+  SessionLocation: ModelStringInput
+  SessionPlayers: ModelStringInput
+  SessionPlayersCount: ModelIntInput
+  and: [ModelSessionsTableConditionInput]
+  or: [ModelSessionsTableConditionInput]
+  not: ModelSessionsTableConditionInput
+}
+
+input CreateSessionsTableInput {
+  id: ID
+  SessionLocation: String!
+  SessionPlayers: [String]
+  SessionPlayersCount: Int
+}
+
+input UpdateSessionsTableInput {
+  id: ID!
+  SessionLocation: String
+  SessionPlayers: [String]
+  SessionPlayersCount: Int
+}
+
+input DeleteSessionsTableInput {
+  id: ID!
+}
+
+input ModelSubscriptionSessionsTableFilterInput {
+  id: ModelSubscriptionIDInput
+  SessionLocation: ModelSubscriptionStringInput
+  SessionPlayers: ModelSubscriptionStringInput
+  SessionPlayersCount: ModelSubscriptionIntInput
+  and: [ModelSubscriptionSessionsTableFilterInput]
+  or: [ModelSubscriptionSessionsTableFilterInput]
+}
+
+type ModelTeamsTableConnection @aws_api_key @aws_iam @aws_cognito_user_pools {
+  items: [TeamsTable]!
+  nextToken: String
+}
+
+input ModelTeamsTableFilterInput {
+  id: ModelIDInput
+  TeamName: ModelStringInput
+  TeamOwner: ModelStringInput
+  TeamStatus: ModelStringInput
+  TeamMembers: ModelStringInput
+  and: [ModelTeamsTableFilterInput]
+  or: [ModelTeamsTableFilterInput]
+  not: ModelTeamsTableFilterInput
+}
+
+input ModelTeamsTableConditionInput {
+  TeamName: ModelStringInput
+  TeamOwner: ModelStringInput
+  TeamStatus: ModelStringInput
+  TeamMembers: ModelStringInput
+  and: [ModelTeamsTableConditionInput]
+  or: [ModelTeamsTableConditionInput]
+  not: ModelTeamsTableConditionInput
+}
+
+input CreateTeamsTableInput {
+  id: ID
+  TeamName: String!
+  TeamOwner: String!
+  TeamStatus: String!
+  TeamMembers: [String]
+}
+
+input UpdateTeamsTableInput {
+  id: ID!
+  TeamName: String
+  TeamOwner: String
+  TeamStatus: String
+  TeamMembers: [String]
+}
+
+input DeleteTeamsTableInput {
+  id: ID!
+}
+
+input ModelSubscriptionTeamsTableFilterInput {
+  id: ModelSubscriptionIDInput
+  TeamName: ModelSubscriptionStringInput
+  TeamStatus: ModelSubscriptionStringInput
+  TeamMembers: ModelSubscriptionStringInput
+  and: [ModelSubscriptionTeamsTableFilterInput]
+  or: [ModelSubscriptionTeamsTableFilterInput]
+}
+
+type ModelGamesTableConnection @aws_api_key @aws_iam @aws_cognito_user_pools {
+  items: [GamesTable]!
+  nextToken: String
+}
+
+input ModelGamesTableFilterInput {
+  id: ModelIDInput
+  Location: ModelStringInput
+  GameDate: ModelStringInput
+  GameTime: ModelStringInput
+  GameCompLvl: ModelStringInput
+  GamePlayers: ModelStringInput
+  GamePrice: ModelIntInput
+  GameOwner: ModelStringInput
+  GameCourt: ModelStringInput
+  PlayersSex: ModelStringInput
+  and: [ModelGamesTableFilterInput]
+  or: [ModelGamesTableFilterInput]
+  not: ModelGamesTableFilterInput
+}
+
+input ModelGamesTableConditionInput {
+  Location: ModelStringInput
+  GameDate: ModelStringInput
+  GameTime: ModelStringInput
+  GameCompLvl: ModelStringInput
+  GamePlayers: ModelStringInput
+  GamePrice: ModelIntInput
+  GameOwner: ModelStringInput
+  GameCourt: ModelStringInput
+  PlayersSex: ModelStringInput
+  and: [ModelGamesTableConditionInput]
+  or: [ModelGamesTableConditionInput]
+  not: ModelGamesTableConditionInput
+}
+
+input CreateGamesTableInput {
+  id: ID
+  Location: String!
+  GameDate: AWSDate!
+  GameTime: AWSTime!
+  GameCompLvl: String!
+  GamePlayers: [String]
+  GamePrice: Int
+  GameOwner: String
+  GameCourt: String
+  PlayersSex: String
+}
+
+input UpdateGamesTableInput {
+  id: ID!
+  Location: String
+  GameDate: AWSDate
+  GameTime: AWSTime
+  GameCompLvl: String
+  GamePlayers: [String]
+  GamePrice: Int
+  GameOwner: String
+  GameCourt: String
+  PlayersSex: String
+}
+
+input DeleteGamesTableInput {
+  id: ID!
+}
+
+input ModelSubscriptionGamesTableFilterInput {
+  id: ModelSubscriptionIDInput
+  Location: ModelSubscriptionStringInput
+  GameDate: ModelSubscriptionStringInput
+  GameTime: ModelSubscriptionStringInput
+  GameCompLvl: ModelSubscriptionStringInput
+  GamePlayers: ModelSubscriptionStringInput
+  GamePrice: ModelSubscriptionIntInput
+  GameCourt: ModelSubscriptionStringInput
+  PlayersSex: ModelSubscriptionStringInput
+  and: [ModelSubscriptionGamesTableFilterInput]
+  or: [ModelSubscriptionGamesTableFilterInput]
+}
+
+type ModelUsersTableConnection @aws_api_key @aws_iam @aws_cognito_user_pools {
+  items: [UsersTable]!
+  nextToken: String
+}
+
+input ModelUsersTableFilterInput {
+  id: ModelIDInput
+  Email: ModelStringInput
+  Username: ModelStringInput
+  Surname: ModelStringInput
+  Name: ModelStringInput
+  GamesPlayed: ModelIntInput
+  Team: ModelStringInput
+  teamstableID: ModelIDInput
+  and: [ModelUsersTableFilterInput]
+  or: [ModelUsersTableFilterInput]
+  not: ModelUsersTableFilterInput
+}
+
+input ModelUsersTableConditionInput {
+  Email: ModelStringInput
+  Username: ModelStringInput
+  Surname: ModelStringInput
+  Name: ModelStringInput
+  GamesPlayed: ModelIntInput
+  Team: ModelStringInput
+  teamstableID: ModelIDInput
+  and: [ModelUsersTableConditionInput]
+  or: [ModelUsersTableConditionInput]
+  not: ModelUsersTableConditionInput
+}
+
+input CreateUsersTableInput {
+  id: ID
+  Email: AWSEmail!
+  Username: String!
+  Surname: String
+  Name: String
+  GamesPlayed: Int
+  Team: String
+  teamstableID: ID
+}
+
+input UpdateUsersTableInput {
+  id: ID!
+  Email: AWSEmail
+  Username: String
+  Surname: String
+  Name: String
+  GamesPlayed: Int
+  Team: String
+  teamstableID: ID
+}
+
+input DeleteUsersTableInput {
+  id: ID!
+}
+
+input ModelSubscriptionUsersTableFilterInput {
+  id: ModelSubscriptionIDInput
+  Email: ModelSubscriptionStringInput
+  Username: ModelSubscriptionStringInput
+  Surname: ModelSubscriptionStringInput
+  Name: ModelSubscriptionStringInput
+  GamesPlayed: ModelSubscriptionIntInput
+  Team: ModelSubscriptionStringInput
+  teamstableID: ModelSubscriptionIDInput
+  and: [ModelSubscriptionUsersTableFilterInput]
+  or: [ModelSubscriptionUsersTableFilterInput]
+}

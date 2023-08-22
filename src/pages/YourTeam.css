@@ -1,0 +1,203 @@
+.yourteam--title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    /* center the title */
+    display: flex;
+    justify-content: center;
+}
+
+.yourteam--content {
+    display: flex;
+    margin-bottom: 1rem;
+    justify-content: flex-start;
+}
+
+.yourteam--content--mainview {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 5%;
+    width: 70%;
+}
+
+/* News area */
+.yourteam--feed--title {
+    background-color: #BDBDBD;
+    padding: 0% 1% 0% 2%;
+    border-radius: 7px 7px 0px 0px;
+}
+
+.yourteam--mainview--feed {
+    background-color: transparent;
+    margin-bottom: 5%;
+    /* height: 10rem; */
+    max-height: 10rem;
+    overflow-y: scroll;
+    /* hide the scroll bar */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    border-radius: 0px 0px 7px 7px;
+    border: #BDBDBD solid 0.5px;
+    
+} .yourteam--mainview--feed::-webkit-scrollbar {
+    display: none;
+} .yourteam--feed--info {
+    padding-left: 3%;
+}
+
+/* Players area */
+.yourteam--players--title {
+    background-color: #BDBDBD;
+    padding: 0% 1% 0% 2%;
+    border-radius: 7px 7px 0px 0px;
+}
+.yourteam--mainview--players {
+    background-color: transparent;
+    margin-bottom: 5%;
+    height: auto;
+    border-radius: 0px 0px 7px 7px;
+    border: #BDBDBD solid 0.5px;
+}  .yourteam--players--info {
+    padding-left: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 300px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+} .yourteam--players--info::-webkit-scrollbar {
+    display: none;
+} 
+
+.ul--players--info {
+    /* change list style */
+    list-style-type: none;
+    padding: 0;
+    flex-grow: 1;
+
+} .li--players--info {
+    /* width: 30%;
+    margin: 1%; */
+}
+
+.yourteam--content--settings {
+    display: flex;
+    flex-direction: column;
+    margin-left: 3%;
+    width: 18%;
+} .yourteam--settings--title {
+    background-color: #BDBDBD;
+    padding: 0% 1% 0% 6%;
+    border-radius: 7px 7px 0px 0px;
+} .yourteam--settings--info {
+    background-color: transparent;
+    border-radius: 0px 0px 7px 7px;
+    border: #BDBDBD solid 0.5px;
+    margin-bottom: 5%;
+    /* padding-left: 10%; */
+    height: 12rem;
+    position: relative; 
+    /* Remember to maybe remove this position */
+}
+
+.settings--label{
+    /* padding-left: 10%; */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: 5% 0% 5% 0%;
+
+} .yourteam--settings--info--select{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 10px;
+    height: 1.5rem;
+    padding: 0 15px;
+    box-shadow: 0px 0px 8px #ccc;
+    display: flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    width: 80%;
+    background-color: transparent;
+} .yourteam--settings--info--select:hover {
+    border: solid 1px #9E9E9E;
+}
+
+.settings--save--btn {
+    background-color: transparent;
+  border-radius: 10px;
+  height: 2rem;
+  padding: 0 15px;
+  box-shadow: 0px 0px 8px #ccc;
+  display: flex;
+  align-items: center;
+  margin-top: 1%;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: auto;
+  margin-left: auto;
+  
+  justify-content: center;
+}.settings--save--btn:hover {
+    border: solid 1px #9E9E9E; 
+}
+
+.settings--leave-team {
+    /* move to buttom of div */
+    margin-top: auto;
+    margin-bottom: 1%;
+}
+.settings--leave-team--btn {
+    background-color: transparent;
+    border-radius: 10px;
+    height: 1.5rem;
+    padding: 0 15px;
+    box-shadow: 0px 0px 8px #ccc;
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 25px;
+    /* Move to buttom of div */
+    /* margin-top: auto;
+    margin-bottom: 1%; */
+    position: relative;
+    top: 21%;
+    margin-left: auto;
+    margin-right: auto;
+
+}.settings--leave-team--btn:hover {
+    border: solid 1px #9E9E9E; 
+}
+
+
+/* popUp */
+/* .leave-team--btn {
+    background-color: transparent;
+    border-radius: 10px;
+    height: 2rem;
+    padding: 0 15px;
+    box-shadow: 0px 0px 8px #ccc;
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+    width: 10%;
+} .leave-team--btn:hover {
+    border: solid 1px #9E9E9E; 
+} */

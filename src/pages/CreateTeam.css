@@ -1,0 +1,76 @@
+.div--create-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form--create-team {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 50%;
+    border: 1px solid #9E9E9E;
+    box-shadow: 0px 0px 8px #ccc;
+    background-color: transparent;
+    border-radius: 5px;
+
+    margin: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 300px;
+}
+.form--create-team:hover {  
+    border: solid 1px black; 
+}
+
+.label--team-name {
+
+}.input--team-name {
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px #ccc;
+    align-items: center;
+    border: none;
+}.input--team-name:hover {
+    border: solid 1px #9E9E9E; 
+}.input--team-name:focus {
+    border: solid 1px #9E9E9E; 
+    outline: none;
+}.input--team-name:active {
+    border: solid 1px #9E9E9E; 
+}
+
+
+.label--team-status {
+    
+}.select--team-status {
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px #ccc;
+    align-items: center;
+    border: none;
+}.select--team-status:hover {
+    border: solid 1px #9E9E9E; 
+}.select--team-status:focus {
+    border: solid 1px #9E9E9E; 
+}.select--team-status:active {
+    border: solid 1px #9E9E9E; 
+}
+
+.button--submit {
+    background-color: transparent;
+    border-radius: 10px;
+    height: 2.5rem;
+    padding: 0 15px;
+    box-shadow: 0px 0px 8px #ccc;
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;    
+} .button--submit:hover {
+    border: solid 1px #9E9E9E; 
+}

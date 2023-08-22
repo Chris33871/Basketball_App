@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "bballaddicts",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2023-07-18T11:32:37.743Z",
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authbballaddicts43342858",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
